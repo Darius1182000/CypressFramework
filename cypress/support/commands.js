@@ -43,3 +43,7 @@ Cypress.Commands.add ('completeLoginForm', () => {
 Cypress.Commands.add ('completeUserOnboardingProcess', () => {
     completeUserOnboardingProcess()
 })
+
+Cypress.Commands.add ('queryDb', query => {
+    cy.task('queryDb', query)
+})
