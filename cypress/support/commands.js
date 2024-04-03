@@ -27,6 +27,7 @@
 const { completeRegisterForm } = require ("./completeRegisterForm")
 const { completeLoginForm } = require ("./completeLoginForm")
 const { completeUserOnboardingProcess } = require ("./completeUserOnboardingProcess")
+import {performDbChecks} from './performDbChecks'//all the imports should be like this
 
 Cypress.Commands.add ('getDataTest', (id, options = {}) => {
     cy.get(`[data-test="${id}"]`, options)
@@ -46,4 +47,8 @@ Cypress.Commands.add ('completeUserOnboardingProcess', () => {
 
 Cypress.Commands.add ('queryDb', query => {
     cy.task('queryDb', query)
+})
+
+Cypress.Commands.add('dbChecksForUsers', props => {
+    performDbChecks.checkUsersTable(props)
 })

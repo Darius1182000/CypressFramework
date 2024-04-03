@@ -9,6 +9,8 @@ export const completeRegisterForm = () => {
     registerPage.passwordField().type(user.password)
     registerPage.confirmPasswordField().type(user.password)
     registerPage.submitButton().click()
-    cy.wrap(user.username).as('email')
+    cy.wrap(user.firstName).as('firstName')
+    cy.wrap(user.lastName).as('lastName')
+    cy.wrap(user.username).as('username')
     cy.wrap(user.password).as('password')
 }
