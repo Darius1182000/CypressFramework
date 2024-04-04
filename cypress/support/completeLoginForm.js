@@ -1,5 +1,5 @@
-import {loginPage} from '../pages/loginPage'
-const { createUserDetails } = require("../support/createUserDetails")
+import { loginPage } from '../pages/loginPage'
+import { createUserDetails } from '../support/createUserDetails'
 
 export const completeLoginForm = () => {
     cy.get("@username").then((username) => {

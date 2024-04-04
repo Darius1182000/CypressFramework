@@ -1,5 +1,5 @@
-const { registerPage } = require("../pages/registerPage")
-const { createUserDetails } = require("../support/createUserDetails")
+import { registerPage } from '../pages/registerPage'
+import { createUserDetails } from '../support/createUserDetails'
 
 export const completeRegisterForm = props => {
     const {

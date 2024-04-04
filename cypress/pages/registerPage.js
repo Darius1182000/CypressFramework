@@ -6,4 +6,10 @@ export const registerPage = {
     passwordField: () => cy.getDataTest('signup-password'),
     confirmPasswordField: () => cy.getDataTest('signup-confirmPassword'),
     submitButton: () => cy.getDataTest('signup-submit'),
+
+    firstNameHelperText: () => cy.getDataId('firstName-helper-text'),
+    lastNameHelperText: () => cy.getDataId('lastName-helper-text'),
+    usernameHelperText: () => cy.getDataId('username-helper-text'),
+    passwordHelperText: () => cy.getDataId('password-helper-text'),
+    confirmPasswordHelperText: () => cy.getDataId('confirmPassword-helper-text')
 }

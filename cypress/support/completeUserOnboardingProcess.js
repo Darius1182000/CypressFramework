@@ -1,5 +1,5 @@
-const { createBankAccount } = require ("../support/createBankAccount")
-const { userOnboardingProcess } = require ("../pages/userOnboardingProcess")
+import { createBankAccount } from '../support/createBankAccount'
+import { userOnboardingProcess } from '../pages/userOnboardingProcess'
 
 export const completeUserOnboardingProcess = () => {
     const user = createBankAccount()

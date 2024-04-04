@@ -29,9 +29,15 @@ const { completeLoginForm } = require("./completeLoginForm")
 import { completeInvalidData } from './completeLoginForm'
 const { completeUserOnboardingProcess } = require("./completeUserOnboardingProcess")
 import { performDbChecks } from './performDbChecks'//all the imports should be like this
+import {validateRegisterForm} from './validateRegisterForm'
+import {validateLoginForm} from './validateLoginForm'
 
 Cypress.Commands.add('getDataTest', (id, options = {}) => {
     cy.get(`[data-test="${id}"]`, options)
+})
+
+Cypress.Commands.add('getDataId', (id, options = {}) => {
+    cy.get(`[id="${id}"]`, options)
 })
 
 Cypress.Commands.add('completeRegisterForm', props => {
@@ -44,6 +50,14 @@ Cypress.Commands.add('completeInvalidData', () => {
 
 Cypress.Commands.add('completeLoginForm', () => {
     completeLoginForm()
+})
+
+Cypress.Commands.add('validateRegisterForm', () => {
+    validateRegisterForm()
+})
+
+Cypress.Commands.add('validateLoginForm', () => {
+    validateLoginForm()
 })
 
 Cypress.Commands.add('completeUserOnboardingProcess', () => {

@@ -2,7 +2,7 @@ import { registerPage } from '../pages/registerPage.js'
 import { loginPage } from '../pages/loginPage.js'
 import { dbQueries } from '../support/dbQueries.js';
 
-describe('My First Test', () => {
+describe('User journeys', () => {
 
   beforeEach(() => {
     registerPage.visit();
@@ -35,9 +35,24 @@ describe('My First Test', () => {
     })
   })
 
-  it.only('should throw an error when the user logs in with invalid credentials', () => {
+  it('should throw an error when the user logs in with invalid credentials', () => {
     loginPage.visit();
     cy.completeInvalidData()
     cy.contains("Username or password is invalid")
+  })
+})
+
+describe('Form field validations', () => {
+
+  beforeEach(() => {
+    registerPage.visit();
+  })
+
+  it('should validate register fields', () => {
+    cy.validateRegisterForm()
+  })
+
+  it('should validate login fields', () => {
+    cy.validateLoginForm()
   })
 })

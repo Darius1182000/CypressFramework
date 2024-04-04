@@ -1,11 +1,11 @@
 const mysql = require("mysql");
 
-function queryTestDb(query, config){
+function queryTestDb(query, config) {
     let connection;
     connection = mysql.createConnection(config.env.db);
     connection.connect();
-    return new Promise((resolve, reject) =>{
-        connection.query(query, (error, result)=>{
+    return new Promise((resolve, reject) => {
+        connection.query(query, (error, result) => {
             if (error) {
                 reject(error);
             } else {
