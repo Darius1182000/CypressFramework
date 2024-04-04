@@ -33,8 +33,8 @@ Cypress.Commands.add ('getDataTest', (id, options = {}) => {
     cy.get(`[data-test="${id}"]`, options)
 })
 
-Cypress.Commands.add ('completeRegisterForm', () => {
-    completeRegisterForm()
+Cypress.Commands.add ('completeRegisterForm', props => {
+    completeRegisterForm(props)
 })
 
 Cypress.Commands.add ('completeLoginForm', () => {
