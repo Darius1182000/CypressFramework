@@ -24,28 +24,33 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-const { completeRegisterForm } = require ("./completeRegisterForm")
-const { completeLoginForm } = require ("./completeLoginForm")
-const { completeUserOnboardingProcess } = require ("./completeUserOnboardingProcess")
-import {performDbChecks} from './performDbChecks'//all the imports should be like this
+const { completeRegisterForm } = require("./completeRegisterForm")
+const { completeLoginForm } = require("./completeLoginForm")
+import { completeInvalidData } from './completeLoginForm'
+const { completeUserOnboardingProcess } = require("./completeUserOnboardingProcess")
+import { performDbChecks } from './performDbChecks'//all the imports should be like this
 
-Cypress.Commands.add ('getDataTest', (id, options = {}) => {
+Cypress.Commands.add('getDataTest', (id, options = {}) => {
     cy.get(`[data-test="${id}"]`, options)
 })
 
-Cypress.Commands.add ('completeRegisterForm', props => {
+Cypress.Commands.add('completeRegisterForm', props => {
     completeRegisterForm(props)
 })
 
-Cypress.Commands.add ('completeLoginForm', () => {
+Cypress.Commands.add('completeInvalidData', () => {
+    completeInvalidData()
+})
+
+Cypress.Commands.add('completeLoginForm', () => {
     completeLoginForm()
 })
 
-Cypress.Commands.add ('completeUserOnboardingProcess', () => {
+Cypress.Commands.add('completeUserOnboardingProcess', () => {
     completeUserOnboardingProcess()
 })
 
-Cypress.Commands.add ('queryDb', query => {
+Cypress.Commands.add('queryDb', query => {
     cy.task('queryDb', query)
 })
 

@@ -1,1 +1,1 @@
-- If an account is created with an existing username, en error should be displayed.
+- If an account is created with an existing username, en error should be displayed, username should be unique.
