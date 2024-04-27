@@ -1,4 +1,4 @@
-export const registerPage = {
+export const signUpPage = {
     visit: () => cy.visit(Cypress.config().baseUrl.replace('signin', 'signup')),
     firstNameField: () => cy.getDataTest('signup-first-name'),
     lastNameField: () => cy.getDataTest('signup-last-name'),

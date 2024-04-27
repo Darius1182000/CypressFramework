@@ -1,4 +1,4 @@
-export const loginPage = {
+export const signInPage = {
     visit: () => cy.visit("/"),
     usernameField: () => cy.getDataTest('signin-username'),
     passwordField: () => cy.getDataTest('signin-password'),
