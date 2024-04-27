@@ -2,8 +2,6 @@ import { signInPage } from '../pages/signInPage'
 
 export const validateSignInForm = () => {
 
-
-    signInPage.visit()
     signInPage.signInButton().click()
     signInPage.usernameHelperText().should('have.text', 'Username is required')
     signInPage.usernameField().type('randomUsername')
