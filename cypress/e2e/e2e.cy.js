@@ -6,7 +6,8 @@ import { SIGN_IN_ROUTE, SIGN_UP_ROUTE } from '../pages/routes.js'
 describe('User journeys', () => {
 
   beforeEach(() => {
-    signUpPage.visit();
+    signInPage.visit();
+    signInPage.signUpLink().click()
   })
 
   after(() =>{
